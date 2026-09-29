@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#063b24">
+  <title>★ FELIZ ANIVERSÁRIO RENATINHO ★</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+<style>
+/* V6 — CARD OPENING MUSIC / ONE-CLICK AUDIO */
+.card-open-audio{
+  position:fixed;left:50%;bottom:22px;transform:translateX(-50%);
+  z-index:10001;display:none;align-items:center;gap:8px;
+  padding:7px 10px;background:#080b09;color:#fff;
+  border:5px ridge #fff;box-shadow:5px 5px #000,0 0 20px rgba(0,255,102,.3);
+  font:7px var(--pixel);text-shadow:1px 1px #000;
+}
+.card-open-audio.show{display:flex}
+.card-open-audio .music-dot{width:8px;height:8px;background:#00ff66;border-radius:50%;box-shadow:0 0 10px #00ff66;animation:musicPulse .7s infinite alternate}
+.card-open-audio button{padding:5px 8px!important;font:7px var(--pixel)!important}
+@keyframes musicPulse{to{transform:scale(1.5);opacity:.45}}
+</style>
+</head>
+<body>
+  <div class="crt" aria-hidden="true"></div>
+  <div class="stars" aria-hidden="true"></div>
+  <div class="sparkle-layer" id="sparkleLayer" aria-hidden="true"></div>
+  <div class="emoji-sky" id="emojiSky" aria-hidden="true"></div>
+
+  <main class="page">
+    <section class="intro" id="intro" aria-labelledby="introTitle">
+      <div class="window-tag"><span>RENATINHO_STUDIOS.EXE</span><span>● ONLINE</span></div>
+      <div class="game-chrome" aria-hidden="true"><span>◀</span><b>RENATINHO BIRTHDAY EDITION</b><span>▶</span></div>
+      <div class="intro-inner">
+        <div class="sparkle">★ ✦ ★ ✧ ★</div>
+        <p class="tiny">!!! INCOMING TRANSMISSION !!!</p>
+        <h1 id="introTitle"><span>FELIZ ANIVERSÁRIO</span><strong>RENATINHO!!!</strong></h1>
+        <div class="save-slot"><span>1 PLAYER</span><span>FILE 01</span><span>♥♥♥♥♥</span></div>
+        <div class="birthday-badge" aria-label="26 anos em 30 de outubro de 2026">
+          <span>★ BIRTHDAY EDITION ★</span><b>26 ANOS</b><small>30/10/2000 → 30/10/2026</small>
+        </div>
+        <p class="quest">VOCÊ FOI SELECIONADO PARA UMA<br><b>MISSÃO ESPECIAL!!!</b></p>
+        <p class="warning">AUMENTE O SOM • CLIQUE EM TUDO • NÃO CONFIE EM NADA</p>
+
+        <div class="loading-box" aria-label="Loading memories 100 percent">
+          <div>LOADING MEMORIES…</div>
+          <div class="loading-bar"><span></span></div>
+          <small>████████████████████ 100%</small>
+        </div>
+
+        <button id="enterBtn" class="start-btn" type="button">
+          <span>▶</span> START GAME <span>◀</span>
+        </button>
+
+        <div class="intro-marquee">
+          <span>★ BEST VIEWED AT 800x600 ★ USE INTERNET EXPLORER ★ NEW!!! ★ CLICK EVERYTHING. THIS IS THE INTERNET. &lt;&lt;</span>
+        </div>
+        <p class="copyright">© 2000-2026 RENATINHO STUDIOS<br>NO COOKIES. NO RESPONSIBILITY. 100% LOVE.</p>
+      </div>
+    </section>
+
+    <section class="wall hidden" id="wall" aria-labelledby="mainTitle">
+      <div class="game-banner"><span>PLAYER 1</span><b>RENATINHO</b><span>★ BIRTHDAY QUEST ★</span><span>PRESS START</span></div>
+      <header class="site-header">
+        <div class="logo">RENATINHO<br><span>2000</span></div>
+        <div class="title-block">
+          <div class="blink tiny">★ !!! SPECIAL EDITION !!! ★</div>
+          <h2 id="mainTitle">★ FELIZ ANIVERSÁRIO <em>RENATINHO!!!</em> ★</h2>
+          <p>UMA EXPERIÊNCIA INTERATIVA DE ALTA TECNOLOGIA DE 2004.</p>
+          <div class="age-mini">♥ 26 ANOS • 30/10/2026 • NASCIDO EM 30/10/2000 ♥</div>
+        </div>
+        <div class="visitor">YOU ARE VISITOR<br><b>#000013</b></div>
+      </header>
+
+      <div class="world-map-label"><span>SELECT YOUR MEMORIES</span><b>★ WORLD MAP ★</b><span>▲ ▼ MOVE • A ENTER • B BACK</span></div>
+      <div class="pixel-ground" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+      <div class="console-hud" aria-label="Status do jogo">
+        <div class="hud-main"><span>PLAYER: <b>RENATINHO</b></span>
+        <span>LEVEL: <b>BIRTHDAY</b></span>
+        <span>LIVES: <b>♥ ♥ ♥ ♥ ♥</b></span>
+        <span>SCORE: <b id="score">000000</b></span>
+        <span>MEMORIES: <b id="progress">0/6</b></span></div>
+        <div class="hud-items"><span>🪙 <b id="coins">00</b></span><span>★ <b id="starsCollected">00</b></span><span>FILE <b>01</b></span></div>
+      </div>
+
+      <div class="retro-controls" aria-hidden="true"><span class="dpad">▲<i>◀</i><b>●</b><i>▶</i>▼</span><span class="control-help">A = ENTER &nbsp; B = BACK &nbsp; START = BEGIN</span><span class="ab">A<br><small>B</small></span></div>
+
+
+      <div class="notice">
+        <span class="new">NEW!!!</span>
+        <span>CLIQUE EM UMA FASE PARA DESBLOQUEAR UMA MEMÓRIA.</span>
+        <span class="blink">PRESS ENTER</span>
+      </div>
+
+      
+      
+      <div class="visitor-bar" aria-hidden="true">
+        <span>☻ YOU ARE VISITOR</span>
+        <strong id="visitorNumber">0001337</strong>
+        <span>★ TO THE COOLEST BIRTHDAY SITE ON THE INTERNET ★</span>
+        <span>♣ SIGN MY GUESTBOOK</span>
+      </div>
+<button id="openMakerBtn" type="button">🛠 CARD MAKER</button>
+      </div>
+
+<section class="playlist-box" aria-label="Playlist de aniversário">
+        <div class="playlist-head">
+          <div><span class="playlist-icon">♫</span><b>RENATINHO'S BIRTHDAY PLAYLIST</b><small>★ MÚSICAS DOS AMIGOS ★</small></div>
+          <span class="playlist-date">30/10/2026</span>
+        </div>
+        <div class="playlist-body">
+          <div class="playlist-window">
+            <div class="playlist-screen"><span id="nowPlaying">♪ SELECIONE UMA MÚSICA</span><small id="nowPlayingFriend">A playlist está esperando os amigos.</small></div>
+            <div class="playlist-controls"><button id="playlistPlay" type="button" aria-label="Reproduzir música">▶</button><button id="playlistPause" type="button" aria-label="Pausar música">Ⅱ</button><button id="playlistStop" type="button" aria-label="Parar música">■</button><div class="playlist-progress"><span id="playlistProgress"></span></div></div>
+          </div>
+          <div class="playlist-list" id="playlistList"><div class="playlist-empty">♪ NENHUMA MÚSICA ADICIONADA AINDA.<br><small>Os amigos podem colocar seus arquivos depois.</small></div></div>
+        </div>
+        <audio id="audioPlayer" preload="metadata"></audio>
+      </section>
+
+      <div class="world-progress" aria-hidden="true"><span id="worldProgressFill"></span></div>
+      <section class="cards-grid" id="cardsGrid" aria-label="Cartões de aniversário"></section>
+
+      <div class="level-clear hidden" id="levelClear">★ CONGRATULATIONS ★<small>ALL WORLDS CLEARED • 100% COMPLETE</small></div>
+
+      <div class="all-unlocked hidden" id="allUnlocked">
+        ★ ★ ★ ALL MEMORIES UNLOCKED ★ ★ ★
+        <small>VOCÊ DESCOBRIU O ARQUIVO SECRETO.</small>
+      </div>
+
+      <button class="final-card hidden" id="finalCard" type="button">
+        <span class="final-star">★</span>
+        <span class="final-title">SECRET FINAL FILE</span>
+        <span class="final-subtitle">[ ACCESS GRANTED ]</span>
+      </button>
+
+      <footer class="site-footer">
+        <div>BEST VIEWED AT 800x600 • MADE WITH ✦ GLITTER ✦ MS PAINT ✦ HTML</div>
+        <div>CLICK EVERYTHING. THIS IS THE INTERNET. &lt;&lt; <span class="blink">ONLINE!!!</span></div>
+      
+        <div class="public-secret-notice">
+          ★ FRIEND CARDS ARE CLASSIFIED ★ &nbsp;•&nbsp; SURPRISE MODE: ON &nbsp;•&nbsp;
+          <span>DO NOT SPOIL RENATINHO!!!</span>
+        </div>
+</footer>
+    </section>
+  </main>
+<div class="world-start hidden" id="worldStart" aria-hidden="true"><div class="world-start-card"><small id="worldStartSmall">WORLD 01</small><strong id="worldStartTitle">READY?</strong><span>PRESS A</span></div></div>
+
+  <div class="modal hidden" id="modal" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-box" id="modalBox" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="close" id="closeBtn" type="button" aria-label="Fechar">X</button>
+      <div class="modal-topbar"><span>● ● ●</span><b id="modalFile">MEMORY.EXE</b><span>_ □ X</span></div>
+      <div id="animation"></div>
+      <div class="message" id="message"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+    <div class="desktop-widgets" id="desktopWidgets" aria-hidden="true">
+      <div class="desktop-window mini-win win-a">
+        <div class="mini-title">★ RENATO.EXE</div>
+        <div class="mini-body">STATUS: <b>AWESOME</b><br>LEVEL: <b>+1 YEAR</b></div>
+      </div>
+      <div class="desktop-window mini-win win-b">
+        <div class="mini-title">♫ NOW PLAYING</div>
+        <div class="mini-body"><span class="eq">▂▅▇▃▆▂</span><br>birthday.mp3</div>
+      </div>
+      <div class="construction-badge">⚠ UNDER<br>CONSTRUCTION ⚠</div>
+    </div>
+
+
+<div class="card-open-audio" id="cardOpenAudio" aria-live="polite">
+  <span class="music-dot"></span><span id="cardMusicLabel">♫ NOW PLAYING</span>
+  <button type="button" id="cardMusicToggle">❚❚</button>
+</div>
+
+</body>
+</html>
